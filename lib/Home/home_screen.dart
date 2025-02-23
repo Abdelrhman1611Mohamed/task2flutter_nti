@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:task2_flutter_ntii/Home/widget/app_image.dart';
 import 'package:task2_flutter_ntii/Home/widget/catgory.dart';
 import 'package:task2_flutter_ntii/Home/widget/taps.dart';
 
@@ -10,16 +12,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF3F5F4),
       appBar: AppBar(
-        backgroundColor: const Color(0xffF3F5F4),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            size: 20,
-          ),
-        ),
+        leading: IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.arrowBack,
+        //fit: BoxFit.scaleDown,width: 24,height: 24,
+        )),
         title: const Text(
           'Today Tasks ',
           style: TextStyle(
@@ -126,6 +122,9 @@ class HomeScreen extends StatelessWidget {
                   colorrd: Colors.black,
                   iconData: Icons.work,
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Catgory(
                   title: 'Home Task',
                   titlex: 'Done',
@@ -133,12 +132,18 @@ class HomeScreen extends StatelessWidget {
                   colorrd: Color(0xffFF0084),
                   iconData: Icons.home,
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Catgory(
                   title: 'Personal Task',
                   titlex: 'In Progress',
                   titlep: 'Improve my English skills by trying to\n speek',
                   colorrd: Colors.green,
                   iconData: Icons.person,
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 Catgory(
                   title: 'Work Task',
